@@ -1,13 +1,13 @@
-package com.mario.registration_form.form_registration;
+package com.mario.spring.form_register;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FormRegistrationApplication {
+public class FormRegisterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FormRegistrationApplication.class, args);
+		SpringApplication.run(FormRegisterApplication.class, args);
 	}
 
 }

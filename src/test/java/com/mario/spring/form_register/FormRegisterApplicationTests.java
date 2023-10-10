@@ -1,10 +1,10 @@
-package com.mario.registration_form.form_registration;
+package com.mario.spring.form_register;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FormRegistrationApplicationTests {
+class FormRegisterApplicationTests {
 
 	@Test
 	void contextLoads() {
