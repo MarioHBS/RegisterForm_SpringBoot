@@ -3,6 +3,7 @@ package com.mario.spring.form_register.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -11,10 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mario.spring.form_register.pessoa.Person;
+import com.mario.spring.form_register.pessoa.PersonRepository;
 import com.mario.spring.form_register.pessoa.RequestPerson;
 
 @Controller
 public class PersonController {
+
+	@Autowired
+	private PersonRepository repository;
 
 	@GetMapping(path = "/")
 	public String openApp() {
@@ -33,11 +38,8 @@ public class PersonController {
 	 */
 	@GetMapping(value = "/pessoa")
 	public String getAllPeople(Model model) {
-		List<Person> people = new ArrayList<Person>();
-		Person p = new Person("aacascac", "Manoel", "01/01/2000", "9898474754", "email@gmail.com", "65110000", "", 1,
-				"bairro", "São Luís", "MA");
+		List<Person> people = repository.findAll();
 
-		people.add(p);
 		model.addAttribute("pessoas", people);
 		return "list_people";
 	}
@@ -49,11 +51,11 @@ public class PersonController {
 
 	@PostMapping(value = "/pessoa/salvar")
 	public String savePerson(@Validated RequestPerson data) {
-		// System.out.println("Número antes: " + data.adr_number());
 		Person p = Person.of(data);
 		// System.out.println("Nome: " + p.getName());
 		// System.out.println("Número: " + p.getAdr_numb());
-		
+		repository.saveAndFlush(p);
+
 		return "redirect:/pessoa";
 	}
 	// https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html

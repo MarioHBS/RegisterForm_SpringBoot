@@ -51,7 +51,7 @@ public class Person {
     person.name = data.name();
     person.birth = data.birth();
     person.number = data.number();
-    person.email = data.email();
+    person.email = data.e_mail();
     person.adr_cep = data.adr_cep();
     person.adr_location = data.adr_location();
     person.adr_numb = Integer.parseInt(data.adr_number());
