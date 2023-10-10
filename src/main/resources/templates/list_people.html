@@ -1,9 +1,6 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:th="http://www.thymeleaf.org"
-  lang="pt-Br"
-  >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="pt-Br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +11,19 @@
       max-width: 526px;
       margin: 0 auto;
     }
+
     .container h1 {
       text-align: center;
       margin-bottom: 16px;
     }
 
+    .table {
+      margin: 0 auto;
+      width: 300px;
+    }
+    .table th {
+      padding: 0 8px;
+    }
   </style>
 </head>
 
@@ -26,6 +31,21 @@
   <div class="container">
     <h1>Lista de Pessoas:</h1>
 
+    <table border="1" class="table">
+      <thead>
+        <tr>
+          <th>Nome completo</th>
+          <th>E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="pessoa : ${pessoas}">
+          <td th:text="${pessoa.name}">nome</td>
+          <td th:text="${pessoa.email}">e-mail</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
+
 </html>
