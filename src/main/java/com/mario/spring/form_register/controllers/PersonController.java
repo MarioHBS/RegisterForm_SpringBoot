@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mario.spring.form_register.pessoa.Person;
+import com.mario.spring.form_register.pessoa.RequestPerson;
 
 @Controller
 public class PersonController {
@@ -45,9 +47,10 @@ public class PersonController {
 		return "open_form";
 	}
 
-	@PostMapping(value = "pessoa/{object}")
-	public String savePerson() {
-		return "redirect:/open_form";
+	@PostMapping(value = "/pessoa/salvar")
+	public String savePerson(@Validated RequestPerson data) {
+		System.out.println("Nome: " + data.name());
+		return "redirect:/pessoa";
 	}
 	// https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html
 }
