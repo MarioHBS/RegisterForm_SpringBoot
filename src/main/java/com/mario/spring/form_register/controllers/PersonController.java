@@ -49,7 +49,11 @@ public class PersonController {
 
 	@PostMapping(value = "/pessoa/salvar")
 	public String savePerson(@Validated RequestPerson data) {
-		System.out.println("Nome: " + data.name());
+		// System.out.println("Número antes: " + data.adr_number());
+		Person p = Person.of(data);
+		// System.out.println("Nome: " + p.getName());
+		// System.out.println("Número: " + p.getAdr_numb());
+		
 		return "redirect:/pessoa";
 	}
 	// https://www.thymeleaf.org/doc/tutorials/2.1/usingthymeleaf.html

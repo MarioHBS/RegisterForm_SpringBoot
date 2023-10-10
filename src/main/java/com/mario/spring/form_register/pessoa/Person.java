@@ -8,12 +8,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Entity
 @Table(name = "pessoa")
@@ -43,4 +45,19 @@ public class Person {
   private String adr_city;
   @Column(name = "estado")
   private String adr_state;
+
+  public static Person of(RequestPerson data) {
+    var person = new Person();
+    person.name = data.name();
+    person.birth = data.birth();
+    person.number = data.number();
+    person.email = data.email();
+    person.adr_cep = data.adr_cep();
+    person.adr_location = data.adr_location();
+    person.adr_numb = Integer.parseInt(data.adr_number());
+    person.adr_neighbor = data.adr_neighbor();
+    person.adr_city = data.adr_city();
+    person.adr_state = data.adr_state();
+    return person;
+  }
 }
