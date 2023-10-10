@@ -16,4 +16,9 @@ public class PersonController {
     return "second";
   }
 
+  @GetMapping(path = "/pessoa/cadastro")
+  public String addPerson() {
+    return "open_form";
+  }
+
 }

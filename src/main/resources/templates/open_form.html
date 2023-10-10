@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pessoa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Nabla&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dados do Cadastro</h1>
+        <form action="/adicionarPessoa" method="post">
+            <h2>Dados Pessoais</h2>
+
+            <label for="nome">Nome Completo</label> <br />
+            <div class="growinput">
+                <input class="theinput" type="text" name="nome" />
+            </div>
+
+            <div class="line">
+                <div class="block">
+                    <label for="birth">Nascimento</label> <br />
+                    <input class="theinput" type="date" name="birth" />
+                </div>
+                <div class="block">
+                    <label for="number">Contato</label> <br />
+                    <input class="theinput" type="tel" name="number" />
+                </div>
+            </div>
+
+            <label for="e_mail">E-mail</label> <br />
+            <div class="growinput">
+                <input class="theinput" type="email" name="e_mail" />
+            </div>
+
+            <h2>Endereço</h2>
+
+            <label for="adr_cep">CEP</label> <br />
+            <div class="growinput">
+                <input class="theinput" type="number" name="adr_cep" /> <br />
+            </div>
+
+            <label for="adr_location">Endereço</label> <br />
+            <div class="growinput">
+                <input class="theinput" type="text" name="adr_location" />
+            </div>
+
+            <div class="line">
+                <div class="block">
+                    <label for="adr_number">Número</label> <br />
+                    <input class="theinput" type="number" name="adr_number" />
+                </div>
+                <div class="block">
+                    <label for="adr_complement">Complemento</label> <br />
+                    <input class="theinput" type="text" name="adr_complement" />
+                </div>
+            </div>
+
+            <label for="adr_neighbor">Bairro</label> <br />
+            <div class="growinput">
+                <input class="theinput" type="text" name="adr_neighbor" />
+            </div>
+            
+            <div class="line">
+                <div class="block">
+                    <label for="birth">Cidade</label> <br />
+                    <input class="theinput" type="date" name="birth" />
+                </div>
+                <div class="block">
+                    <label for="number">UF</label> <br />
+                    <input class="theinput" type="tel" name="number" />
+                </div>
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+
+</html>
