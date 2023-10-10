@@ -1,7 +1,9 @@
 package com.mario.spring.form_register.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class PersonController {
@@ -11,8 +13,9 @@ public class PersonController {
     return "index";
   }
 
-  @GetMapping(path = "/second")
-  public String openSecond() {
+  @GetMapping(value = "/second")
+  public String openSecond(@RequestParam("p") String name, Model model) {
+    model.addAttribute("nome", name);
     return "second";
   }
 
