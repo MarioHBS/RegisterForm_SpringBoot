@@ -11,4 +11,9 @@ public class PersonController {
     return "index";
   }
 
+  @GetMapping(path = "/second")
+  public String openSecond() {
+    return "second";
+  }
+
 }
