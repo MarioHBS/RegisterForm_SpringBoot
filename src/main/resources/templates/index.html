@@ -4,9 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boas-vindas</title>
+
+  <style type="text/css">
+    body {
+      max-width: 526px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    button {
+      padding: 16px;
+      width: 200px;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #bt_listar {
+      color: white;
+      background-color: burlywood;
+    }
+    #bt_registrar {
+      background-color: dodgerblue;
+    }
+  </style>
 </head>
 
 <body>
-  Olá, você
+  <h2>Olá, escolha a funcionalidade:</h2>
+
+  <div class="buttons">
+    <button id="bt_listar">Listar</button>
+    <button id="bt_registrar" onClick="cadastrar()">Cadastrar</button>
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("bt_listar").onclick = () => {
+      location.href = "http://localhost:8080/pessoa"
+    };
+
+    function cadastrar() {
+      window.location = "http://localhost:8080/pessoa/cadastro";
+    };
+  </script>
 </body>
 </html>
