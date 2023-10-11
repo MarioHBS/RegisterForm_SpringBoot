@@ -13,7 +13,7 @@
 
 	<groupId>com.mario.spring</groupId>
 	<artifactId>form_register</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-ALPHA</version>
 	<name>form_register</name>
 	<description>Projeto de Formulário de Registro de Pessoa com Thymeleaf</description>
 	<properties>
