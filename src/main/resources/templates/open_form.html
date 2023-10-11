@@ -44,7 +44,7 @@
 
             <label for="adr_cep">CEP</label> <br />
             <div class="growinput">
-                <input class="theinput" type="number" name="adr_cep" /> <br />
+                <input class="theinput" type="tel" name="adr_cep" maxlength="9" onkeypress="formatar('#####-###', this)" /> <br />
             </div>
 
             <label for="adr_location">Endereço</label> <br />
@@ -82,6 +82,21 @@
             <button type="submit">Cadastrar</button>
         </form>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+    <!-- <script src="/js/run.js"></script> -->
+    <script>
+        function formatar(mascara, documento) {
+            var i = documento.value.length;
+            var saida = mascara.substring(0, 1);
+            var texto = mascara.substring(i)
+
+            if (texto.substring(0, 1) != saida) {
+                documento.value += texto.substring(0, 1);
+            }
+        }
+    </script>
 </body>
 
 </html>
