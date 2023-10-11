@@ -8,35 +8,52 @@
 
   <style type="text/css">
     .container {
-      max-width: 526px;
+      /* max-width: 600px; */
       margin: 0 auto;
       padding: 16px;
-      background-color: rgb(243, 241, 241);
+      /* background-color: rgb(243, 241, 241); */
     }
 
     h1 {
       color: #0000FF;
-    }
-
-    h2 {
-      color: #FF0000;
-    }
-
-    .container h1 {
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
     }
 
     .table {
-      margin: 0 auto;
-      width: 300px;
+      border-collapse: collapse;
+      border-style: hidden;
+      margin: 16px auto;
+      width: 95%;
+      /* font-size: 1em; */
+      font-family: sans-serif;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .15);
     }
 
-    .table th {
-      padding: 0 8px;
+    .table thead tr {
+      background-color: #009879;
+      color: #fff;
+      text-align: left;
     }
-    .table td {
-      text-align: center;
+    .table tbody tr {
+      border-bottom: 1px solid #dddddd;
+      border-style: hidden;
+    }
+    .table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+      font-weight: bold;
+      color: #009879;
+      font-size: .95em;
+    }
+    .table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    /* .table tbody tr:hover {    } */
+    
+    .table th, .table td {
+      padding: 12px 16px;
+      border-style: hidden;
     }
   </style>
 </head>
@@ -50,13 +67,25 @@
         <tr>
           <th>Nome completo</th>
           <th>E-mail</th>
+          <th>Telefone</th>
         </tr>
       </thead>
       <tbody>
         <tr th:each="pessoa : ${pessoas}">
-          <td th:text="${pessoa.name}">nome</td>
+          <td th:text="${pessoa.name}">nome completo da pessoa</td>
           <td th:text="${pessoa.email}">e-mail</td>
+          <td th:text="${pessoa.number}">---</td>
         </tr>
+        <!-- <tr>
+          <td>segunda pessoa nome completo</td>
+          <td>e-mail 2</td>
+          <td>---</td>
+        </tr>
+        <tr>
+          <td>terceira pessoa nome completo</td>
+          <td>e-mail 3@gmail.com</td>
+          <td>(98) 98478-0123</td>
+        </tr> -->
       </tbody>
     </table>
   </div>
