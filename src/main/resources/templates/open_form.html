@@ -44,7 +44,8 @@
 
             <label for="adr_cep">CEP</label> <br />
             <div class="growinput">
-                <input class="theinput" type="tel" name="adr_cep" maxlength="9" onkeypress="formatar('#####-###', this, event)" /> <br />
+                <input class="theinput" type="tel" name="adr_cep" maxlength="9" onkeypress="formatar('#####-###', this, event)"
+                    onblur="buscarCep(this.value)" /> <br />
             </div>
 
             <label for="adr_location">Endereço</label> <br />
