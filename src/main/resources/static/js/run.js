@@ -24,28 +24,19 @@ function formatar(mascara, documento, event) {
 
 function telephone(doc, event) {
     const pure = doc.value.replace(/\D/g, '');
-    const sz = pure.length;
+    var regex = /[^0-9]/;
 
-    if (sz > 11) {
-        event.returnValue = false
+    // evita gravadar em 'doc.value' acima de 11 caracteres
+    if (pure.length > 11) {
+        // event.returnValue = false
+        event.preventDefault();
         return;
     };
 
-    var regex = /^[a-z]/i;
-    if (!regex.test(event.key)) {
-        // console.log("value: " + doc.value);
+    // if (!regex.test(event.key)) {
         // console.log("pure: " + pure);
-        console.log("sz: " + sz);
-
-        if (sz === 0) doc.value += '(';
-        if (sz >= 2) {
-            doc.value = pure.replace(/^(\d{2})$/, '($1)');
-        }
-        if (sz === 3) {
-            doc.value = pure.replace(/^(\d{2})(\d+)$/, '($1) $2');
-        }
-        if (sz >= 4) doc.value = pure.replace(/^(\d{2})(\d{1})(\d+)$/, '($1) $2 $3');
-        if (sz > 7) doc.value = pure.replace(/^(\d{2})(\d{1})(\d{4})(\d+)$/, '($1) $2 $3-$4');
-    }
-    // return "";
+        // console.log("sz: " + pure.length);
+    const formatted = pure.replace(/(\d{2})(\d{1})(\d{0,4})(\d{0,4})/, '($1) $2 $3-$4');
+    doc.value = (pure.length === 2 && doc.value === '(' + pure + ')') ? pure : formatted;
+    // }
 };
