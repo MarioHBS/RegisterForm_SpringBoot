@@ -22,21 +22,11 @@ function formatar(mascara, documento, event) {
     // console.log("depois: " + documento.value);
 };
 
-function telephone(doc, event) {
+function telephone(doc) {
     const pure = doc.value.replace(/\D/g, '');
-    var regex = /[^0-9]/;
+    // console.log("pure: " + pure);
+    // var regex = /[^0-9]/;
 
-    // evita gravadar em 'doc.value' acima de 11 caracteres
-    if (pure.length > 11) {
-        // event.returnValue = false
-        event.preventDefault();
-        return;
-    };
-
-    // if (!regex.test(event.key)) {
-        // console.log("pure: " + pure);
-        // console.log("sz: " + pure.length);
     const formatted = pure.replace(/(\d{2})(\d{1})(\d{0,4})(\d{0,4})/, '($1) $2 $3-$4');
     doc.value = (pure.length === 2 && doc.value === '(' + pure + ')') ? pure : formatted;
-    // }
 };
