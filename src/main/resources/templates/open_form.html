@@ -85,24 +85,7 @@
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script> -->
-    <!-- <script src="/js/run.js"></script> -->
-    <script>
-        function formatar(mascara, documento, event) {
-            var regex = /^[a-z]/i;
-            // console.log(event.key);
-            if (regex.test(event.key)) {
-                event.returnValue = false;
-            }
-            var i = documento.value.length;
-            var saida = mascara.substring(0, 1);
-            var texto = mascara.substring(i)
-            
-            if (texto.substring(0, 1) != saida) {
-                documento.value += texto.substring(0, 1);
-            }
-            // console.log("depois: " + documento.value);
-        }
-    </script>
+    <script src="/js/run.js"></script>
 </body>
 
 </html>
