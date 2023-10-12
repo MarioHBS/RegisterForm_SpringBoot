@@ -10,13 +10,18 @@ function formatar(mascara, documento, event) {
     // console.log(event.key);
     if (regex.test(event.key)) {
         event.returnValue = false;
+        return;
     }
     var i = documento.value.length;
-    var saida = mascara.substring(0, 1);
+    var saida = '#';//mascara.substring(0, 1);
     var texto = mascara.substring(i)
     
     if (texto.substring(0, 1) != saida) {
         documento.value += texto.substring(0, 1);
     }
     // console.log("depois: " + documento.value);
+};
+
+function telephone(doc, event) {
+    // v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')  
 };
