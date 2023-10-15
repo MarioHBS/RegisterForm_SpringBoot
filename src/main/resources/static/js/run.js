@@ -8,6 +8,10 @@ const state = document.querySelector('input[name="adr_state"]');
 var prev_error = false;
 var script;
 
+/*cep.addEventListener("keypress", (e) => {
+    formatar('#####-###', cep, e)
+});*/
+
 function formatar(mascara, documento, event) {
     var regex = /^[a-z]/i;
     // console.log(event.key);
@@ -22,6 +26,7 @@ function formatar(mascara, documento, event) {
     if (texto[0] != saida) {
         documento.value += texto[0]
     }
+    documento.value = documento.value.substring(0, 9)
     // console.log("depois: " + documento.value);
 };
 

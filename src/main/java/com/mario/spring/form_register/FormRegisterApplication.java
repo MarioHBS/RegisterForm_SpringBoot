@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FormRegisterApplication {
 
-	public static void main(String[] args) {
+    // https://stackoverflow.com/a/47354290/3443949
+    public static void main(String[] args) {
 //		var env = System.getenv();
 //		System.out.println("user_db = " + env.get("SPRING_DATASOURCE_USERNAME"));
 //		System.out.println("user_psw = " + env.get("SPRING_DATASOURCE_PASSWORD"));
