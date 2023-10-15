@@ -1,14 +1,15 @@
 package com.mario.spring.form_register.infra;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @RestControllerAdvice
 public class RequestsExceptionHandler {
     @ExceptionHandler(EntityNotFoundException.class)
-    public ResponseEntity threat500() {
+    public ResponseEntity<String> threat500() {
         return ResponseEntity.badRequest().body("Dado não encontrado");
     }
 }
